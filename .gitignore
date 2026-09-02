@@ -1,0 +1,13 @@
+.env
+
+# Runtime / application data
+media/
+postgres/
+library/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
