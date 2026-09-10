@@ -1,17 +1,17 @@
-# BrangkasHub
+# Albumku
 
-Private family media storage infrastructure.
+Self-hosted family photo and video storage.
 
-BrangkasHub provides self-hosted storage and remote access for family photos and videos.
+Albumku provides private, self-hosted storage and remote access for family photos and videos.
 
 ## Stack
 
-- Ubuntu Server
-- Docker
-- Immich
-- PostgreSQL
-- Redis
-- Cloudflare Tunnel
+* Ubuntu Server
+* Docker
+* Immich
+* PostgreSQL
+* Valkey
+* Cloudflare Tunnel
 
 ## Repository Scope
 
@@ -33,3 +33,24 @@ ThinkCentre
 Immich
    |
 Media Storage
+```
+
+## Storage
+
+Persistent storage is separated from the application configuration:
+
+```text
+SSD
+└── PostgreSQL
+
+External HDD
+└── Immich Library
+```
+
+The Immich library is mounted from:
+
+```text
+/srv/albumku/library
+```
+
+Database storage remains on the ThinkCentre's internal SSD.
